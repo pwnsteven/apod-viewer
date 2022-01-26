@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description" content="Tagg Technical Interview">
+        <meta name="author" content="Doug Van Horn">
+        <link rel="icon" href="/docs/4.0/assets/img/favicons/favicon.ico">
+
+        <title>{% block "title" %}Tagg Technical Interview{% endblock "title" %}</title>
+
+        <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/starter-template/">
+
+        <!-- Bootstrap core CSS -->
+        {# <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> #}
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+        <!-- Custom styles for this template -->
+        <style type="text/css">
+            /* starter-template.css */
+            .icon-list {
+                padding-left: 0;
+                list-style: none;
+            }
+            .icon-list li {
+                display: flex;
+                align-items: flex-start;
+                margin-bottom: .25rem;
+            }
+            .icon-list li::before {
+                display: block;
+                flex-shrink: 0;
+                width: 1.5em;
+                height: 1.5em;
+                margin-right: .5rem;
+                content: "";
+                background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23212529' viewBox='0 0 16 16'%3E%3Cpath d='M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0zM4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5z'/%3E%3C/svg%3E") no-repeat center center / 100% auto;
+            }
+
+            .bd-placeholder-img {
+                font-size: 1.125rem;
+                text-anchor: middle;
+                -webkit-user-select: none;
+                -moz-user-select: none;
+                user-select: none;
+            }
+
+            @media (min-width: 768px) {
+                .bd-placeholder-img-lg {
+                font-size: 3.5rem;
+                }
+            }
+        </style>
+
+        {% block "extra_head" %}
+        {% endblock %}
+    </head>
+
+    <body>
+        <div class="col-lg-8 mx-auto p-3 py-md-5">
+            <header class="d-flex align-items-center pb-3 mb-5 border-bottom">
+                <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="currentColor" class="bi bi-card-image me-3" viewBox="0 0 16 16">
+                    <path d="M6.002 5.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z"/>
+                    <path d="M1.5 2A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-13zm13 1a.5.5 0 0 1 .5.5v6l-3.775-1.947a.5.5 0 0 0-.577.093l-3.71 3.71-2.66-1.772a.5.5 0 0 0-.63.062L1.002 12v.54A.505.505 0 0 1 1 12.5v-9a.5.5 0 0 1 .5-.5h13z"/>
+                </svg>
+                <a href="/" class="d-flex align-items-center text-dark text-decoration-none">
+                    <span class="fs-4">Outside APOD Viewer</span>
+                </a>
+            </header>
+
+            {% block "main" %}
+            <main>
+                {% block "content" %}
+                {# Leaving the Bootstrap example content here for reference. #}
+                <h1>Get started with Bootstrap</h1>
+                <p class="fs-5 col-md-8">Quickly and easily get started with Bootstrap's compiled, production-ready files with this barebones example featuring some basic HTML and helpful links. Download all our examples to get started.</p>
+
+                <div class="mb-5">
+                    <a href="/docs/5.1/examples/" class="btn btn-primary btn-lg px-4">Download examples</a>
+                </div>
+
+                <hr class="col-3 col-md-2 mb-5">
+
+                <div class="row g-5">
+                    <div class="col-md-6">
+                        <h2>Starter projects</h2>
+                        <p>Ready to beyond the starter template? Check out these open source projects that you can quickly duplicate to a new GitHub repository.</p>
+                        <ul class="icon-list">
+                        <li><a href="https://github.com/twbs/bootstrap-npm-starter" rel="noopener" target="_blank">Bootstrap npm starter</a></li>
+                        <li class="text-muted">Bootstrap Parcel starter (coming soon!)</li>
+                        </ul>
+                    </div>
+
+                    <div class="col-md-6">
+                        <h2>Guides</h2>
+                        <p>Read more detailed instructions and documentation on using or contributing to Bootstrap.</p>
+                        <ul class="icon-list">
+                        <li><a href="/docs/5.1/getting-started/introduction/">Bootstrap quick start guide</a></li>
+                        <li><a href="/docs/5.1/getting-started/webpack/">Bootstrap Webpack guide</a></li>
+                        <li><a href="/docs/5.1/getting-started/parcel/">Bootstrap Parcel guide</a></li>
+                        <li><a href="/docs/5.1/getting-started/contribute/">Contributing to Bootstrap</a></li>
+                        </ul>
+                    </div>
+                </div>
+                {% endblock %}
+            </main>
+            {% endblock "main" %}
+
+
+
+
+            <footer class="pt-5 my-5 text-muted border-top">
+                Outside APOD Viewer &copy;
+            </footer>
+        </div>
+
+
+        {% block "js" %}
+        {# <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script> #}
+        {# <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script> #}
+        {# <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script> #}
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+        {% endblock "js" %}
+    </body>
+</html>

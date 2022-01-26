@@ -1,0 +1,10 @@
+--editable src/
+
+# Django 3.2 LTS
+django==3.2.*
+
+# Requests for API calls.
+requests
+
+# REPL convenience.
+ipython
