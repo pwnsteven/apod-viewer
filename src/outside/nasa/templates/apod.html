@@ -1,0 +1,93 @@
+{% extends "base.html" %}
+
+{% block "content" %}
+    <div class="starter-template">
+
+        <!-- Throw alert for newly created APODs -->
+        {% if created %}
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                <h4 class="alert-heading">New APOD added!</h4>
+                <small>Review in <a href="{{apod.get_admin_url}}">admin</a></small>
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+        {% endif %}
+
+        <!-- Throw alert for errors -->
+        {% if messages %}
+            {% for message in messages %}
+                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                    <h4 class="alert-heading">Unexpected error occurred, redirected to today's APOD... </h4>
+                    <hr>
+                    {{message}}
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+            {% endfor %}
+        {% endif %}
+
+        <!-- Successful response, format and display APOD -->
+        <h1>NASA - Picture of the Day</h1>
+        <p class="lead">Image of the day from NASA APOD API.</p>
+
+        {% if apod %}
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col">
+                        <!-- render videos differently -->
+                        {% if apod.is_video %}
+                            <iframe width="800" height="600" src={{apod.url}}> </iframe>
+                        {% else %}
+                            <img class='lozad' src="{{ apod.url }}" class="rounded" border='5px' alt="{{ apod.title }}">
+                        {% endif %}
+                    </div>
+                    <div class="col">
+
+                        <h3> APOD Data: </h3>
+
+                        <table class="table">
+                            <tbody>
+                                <tr>
+                                    <th scope="row">Date: </th>
+                                    <td>{{apod.date}}</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">URL: </th>
+                                    <td>{{apod.url}}</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">HD URL: </th>
+                                    <td>{{apod.hdurl}}</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Media Type: </th>
+                                    <td>{{apod.media_type}}</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Service Version: </th>
+                                    <td>{{apod.service_version}}</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Copyright: </th>
+                                    <td>{{apod.copyright}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <p> {{apod.explanation}}</p>
+                    </div>
+                </div>
+            </div>
+
+
+        {% else %}
+            <div class="alert alert-warning">
+                {{ error_msg }}
+            </div>
+        {% endif %}
+
+
+
+    </div>
+{% endblock "content" %}

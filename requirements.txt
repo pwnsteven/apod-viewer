@@ -8,3 +8,10 @@ requests
 
 # REPL convenience.
 ipython
+
+# Rollbar Logging
+rollbar==0.1
+
+# Make JSON more readable in admin
+django-prettyjson-0.4.*
+standardjson-0.3.*
