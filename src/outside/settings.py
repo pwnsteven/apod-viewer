@@ -28,7 +28,7 @@ with open(os.path.join(BASE_DIR, 'secrets.json')) as secrets_file:
 def get_secret(setting, secrets=secrets):
     """Get secret setting or fail with ImproperlyConfigured"""
     try:
-        return secrets[setting]
+        return secrets.get(setting, '')
     except KeyError:
         raise ImproperlyConfigured(f"Set the {setting} setting")
 
@@ -37,7 +37,7 @@ def get_secret(setting, secrets=secrets):
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = get_secret('DJANGO_KEY')
+SECRET_KEY = "django-insecure-kzuf&bvccv*d*t5gt7l$q)l+)nr=t1%4tdn!v+)7(8=g33teo7"
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
